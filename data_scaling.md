@@ -10,12 +10,12 @@ x1 특성은 y를 예측하는데 큰 영향을 주지 않는 것으로 판단�
 
 - 모든 스케일링은 테스트 데이터가 포함된 전체 데이터셋이 아닌 오로지 훈련 데이터에 대해서만 fit 되어야함
 - 이후 훈련 데이터와 테스트 데이터 각각을 스케일링
-    - **fit_transform()**는 train dataset에서만 사용
+    - **fit_transform()** 는 train dataset에서만 사용
     - train data에 있는 mean과 variance를 학습
-    - **transform()**는 train data로부터 학습된 mean값과 variance값을 test data에 적용하기 위해 사용
+    - **transform()** 는 train data로부터 학습된 mean값과 variance값을 test data에 적용하기 위해 사용
         - 만약에 fit_transform을 test data에도 적용하게 된다면 test data로부터 새로운 mean값과 variance값을 얻게 되는 것
         - 이 데이터마저 학습하게 된다면 우리의 모델이 처음 보는 데이터에 대해서 얼마나 성능이 좋은지 알 수 없게 되는 것
-        - test data는 모델이 학습된 후에 평가할 때만 사용되어야 하는데 **fit_transform을 test data에도 하게 된다면 모델의 성능을 평가할 수 없게 되는 것**
+        - test data는 모델이 학습된 후에 평가할 때만 사용되어야 하는데 **fit_transform을 test data에도 하게 된다면 모델의 성능을 평가할 수 없게 되는 것**  
 - 모델이 학습을 하는 과정에서 어떠한 방식으로든 테스트 데이터를 사용하게 되어서는 안됨
 - 일반적으로 타겟(y) 데이터에 대한 스케일링은 진행하지 않음
 - 많은 스케일러들이 이상치의 영향을 많이 받음
@@ -155,5 +155,5 @@ X_test_scaled = normal_scaler.transform(X_test)
 # X_origin = normal_scaler.inverse_transform(X_train_scaled)
 ```
 ### :heavy_exclamation_mark: 정규화(Normalization)와 표준화(Standardization)  
-- **정규화(Normalization)**는 값들을 특정 범위, 주로 [0,1]로 스케일링하는 것을,
-- **표준화(Standardization)**는 평균을 0, 표준편차를 1이 되도록 값을 스케일링하는 것을 의미
+- **정규화(Normalization)** 는 값들을 특정 범위, 주로 [0,1]로 스케일링하는 것을,
+- **표준화(Standardization)** 는 평균을 0, 표준편차를 1이 되도록 값을 스케일링하는 것을 의미
