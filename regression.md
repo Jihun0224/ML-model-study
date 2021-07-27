@@ -76,7 +76,8 @@
 - 독립 변수간 상관관계가 있으면 안됨 즉 다중 공선성이 없어야함
 - 종속 변수의 값이 서수인 경우 서수로 로지스틱 회귀로 호출
 - 종속 변수가 다중 클레스이면 다항 로지스틱 회귀를 이용
-
+  
++ 딥러닝으로 오면 sigmoid function이라 함
 ---
 # 다중공선성이 있는 경우  
 ## Ridge / Lasso / Elastic net regression   
@@ -120,10 +121,10 @@ Ridge의 경우 계수를 전체적으로 줄이기 때문에 변수 선택이 �
 -  R² 는 값이 클수록 성능이 좋음
 - **MSE (Mean Squared Error)**: 실제 값과 예측 값의 차이를 제곱해 평균한 것  
 ![image](https://user-images.githubusercontent.com/59672592/127084224-73301fc5-a4a3-400e-8db4-01d4e7978a1e.png)  
-- **RMSE (Root Mean Squared Error)**: MSE 값은 오류의 제곱을 구하므로 실제 오류 평균보다 더 커지는 특성이 있어 MSE에 루트를 씌운 RMSE 값을 사용
-![image](https://user-images.githubusercontent.com/59672592/127084269-add84aab-4212-4734-8c17-6aa633cc64fe.png)
+- **RMSLE (Root Mean Squared Log Error)**: RMSE에 로그를 적용해준 지표
+![image](https://user-images.githubusercontent.com/59672592/127084469-a92d9dcc-6096-4839-95b6-c7d9c17a5123.png)  
 - **RMSLE (Root Mean Squared Log Error)**: MSE 값은 오류의 제곱을 구하므로 실제 오류 평균보다 더 커지는 특성이 있어 MSE에 루트를 씌운 RMSE 값을 사용
-- **MAD (Mean Absolue Deviation(Error))**: 실제 값과 예측 값의 차이를 절댓값으로 변환해 평균한 것  
+- **MAE (Mean Absolue Error(Deviation))**: 실제 값과 예측 값의 차이를 절댓값으로 변환해 평균한 것  
 - **R² (R Sqaure)**: R² 는 분산 기반으로 예측 성능을 평가, 1에 가까울수록 예측 정확도가 높음  
 ![image](https://user-images.githubusercontent.com/59672592/126996458-48442f41-e323-4dba-85dd-75a3ad6bd093.png)  
 
